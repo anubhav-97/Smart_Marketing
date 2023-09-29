@@ -1,7 +1,7 @@
 # Import required libraries and models
 import uvicorn
 from fastapi import FastAPI
-from basemodels import GeneratePosts, GenerateEmail
+from api.basemodels import GeneratePosts, GenerateEmail
 from post_generator.main import generate
 from email_generator.email_generator import EmailGenerator
 
