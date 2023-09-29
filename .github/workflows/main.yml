@@ -9,17 +9,14 @@ on:
 
 # The Job defines a series of steps that execute on the same runner.
 jobs:
+
   CI:
     # Define the runner used in the workflow
     runs-on: ubuntu-latest
     steps:   
       # Check out repo so our workflow can access it
       - uses: actions/checkout@v2
-
-      - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
+      
       # Step-1 Setup Python
       - name: Set up Python
         # This action sets up a Python environment for use in actions
