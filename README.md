@@ -16,7 +16,7 @@ It Allows you to write posts in any language
 2. Email Marketing Campaign: 
 It can Generate personalized email content using ChatGPT.
 It can draft subject lines, email body text, and call-to-action (CTA) messages tailored to individual recipient with context
-It generate product recommendations, discount offer's or can Educate about the a particular product.
+It generate gives product recommendations, discount offer's or can Educate about the a particular product.
 It can adjust the tone/style accordingly weather the email style should be Forma, Casual or Neutral.
 
 # Tools and Technologies Used
@@ -36,15 +36,10 @@ After you have Python installed, follow these steps:
 
 And you will be on the app...
 
-
-
-
-
-
-
-Generates AI Images for each post using Stable Diffusion
-
-Use ChatGPT to analyze your email list and segment subscribers based on various criteria, such as demographics, behavior, or engagement level.
-ChatGPT can analyze recipient data and recommend the best times to send emails based on individual preferences and past behavior to increase open and click-through rates.
+### In the near Future 
+It can Generates AI Images for each post using Stable Diffusion, Dalle2 or Midjourney\
+We can Connect it with the email smtp and extract all past emails and it will create personalised email based on the past conversation.\
+It can analyze the email list and segment subscribers based on various criteria, such as demographics, behavior, or engagement level.
+It can analyze recipient data and recommend the best times to send emails based on individual preferences and past behavior to increase open and click-through rates.
 
 
