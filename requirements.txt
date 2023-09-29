@@ -1,5 +1,5 @@
 openai
-langchain==0.0.304
+langchain==0.0.292
 python-inquirer
 tweepy
 uvicorn==0.14.0
