@@ -21,10 +21,10 @@ It can adjust the tone/style accordingly weather the email style should be Forma
 
 # Tools and Technologies Used
 
-Frontend: React, JavaScript, Node.js, HTML, CSS
-Backend: Python 3, Langchain, OpenAI API, FastAPI(To Build API)
-Cloud Technologies: AWS Lambda, AWS API Gateway, AWS S3
-CI-CD pipeline: Github Actions.
+Frontend: React, JavaScript, Node.js, HTML, CSS <br />
+Backend: Python 3, Langchain, OpenAI API, FastAPI(To Build API) <br />
+Cloud Technologies: AWS Lambda, AWS API Gateway, AWS S3 <br />
+CI-CD pipeline: Github Actions. <br />
 
 # How to start using Smart Marketer?
 After you have Python installed, follow these steps:
