@@ -1,0 +1,11 @@
+os
+openai
+langchain
+enum
+uvicorn
+fastapi
+requests
+python-inquirer
+uvicorn
+fastapi
+tweepy
