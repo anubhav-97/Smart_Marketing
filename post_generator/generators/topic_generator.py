@@ -32,8 +32,4 @@ class TopicGenerator:
             if len(i) > 2
         ][: self.topic_count]
         
-        # Log and format the generated topics
-        # Logger.log(format_list(topics))
-        
-        # Return the generated topics
         return topics

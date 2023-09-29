@@ -32,7 +32,7 @@ class EmailGenerator:
             # Calculate the total characters in the email contents
             contents_length += len(email_contents[topic])
             # Create a prompt for generating a professional 2-3 paragraph email        
-            prompt=f"Write a professional 2-3 paragraph email sounds {style}.\n\nSender: {sender}\nRecipient: {recipient} {contents_str}\n\nEmail Text:"
+            prompt=f"Write a professional 2-3 paragraph email sounds {style}.\nSender: {sender}\nRecipient: {recipient} {contents_str}\nEmail Text:"
        
         # Generate the final email text using the Language Model (LLM)
         email_final_text = LLM.generate([HumanMessage(content=prompt)], GenerationItemType.POST).content.strip()

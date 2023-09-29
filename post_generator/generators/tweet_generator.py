@@ -22,7 +22,7 @@ class TweetGenerator:
         
         # Check if prompt_expansion is provided and append it to the prompt if not empty
         if (self.prompt_expansion != ""):
-            prompt = prompt + f"\n\nTake this also into account: {self.prompt_expansion}"
+            prompt = prompt + f"\nTake this also into account: {self.prompt_expansion}"
         
         # Generate the tweet using the Language Model (LLM)
         tweet = LLM.generate(
@@ -30,8 +30,4 @@ class TweetGenerator:
                 content=prompt)], GenerationItemType.POST
         ).content.strip()
         
-        # Log the generated tweet
-        # Logger.log(tweet)
-        
-        # Return the generated tweet
         return tweet

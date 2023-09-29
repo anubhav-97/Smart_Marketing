@@ -27,8 +27,4 @@ class LinkedInGenerator:
         # Generate the post using the Language Model (LLM)
         post = LLM.generate([HumanMessage(content=prompt)], GenerationItemType.POST).content.strip()
         
-        # Log the generated post
-        # Logger.log(post)
-        
-        # Return the generated post
         return post

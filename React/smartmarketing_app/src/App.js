@@ -6,7 +6,7 @@ import Header from './Header';
 function App() {
   // State variables to manage input and output for the Social Media and Email generators
   const [postInput, setPostInput] = useState({});
-  const [emailInput, setEmailInput] = useState({});
+  const [emailInput, setEmailInput] = useState({ email_contents: [] });
 
   const [postOutput, setPostOutput] = useState();
   const [emailOutput, setEmailOutput] = useState();
@@ -21,6 +21,12 @@ function App() {
   const generateEmail = async () => {
     const response = await api.post('/emailgenerator', emailInput);
     setEmailOutput(response.data);
+  };
+  const addEmailContent = () => {
+    const newContent = prompt('Enter email content:');
+    if (newContent) {
+      setEmailInput({ ...emailInput, email_contents: [newContent, ...emailInput.email_contents] });
+    }
   };
 
   return (
@@ -86,11 +92,15 @@ function App() {
                 className="input-field"
                 placeholder="Style of the Email?"
                 onChange={(e) => setEmailInput({ ...emailInput, style: e.target.value })}
-            /><input
-                className="input-field"
-                placeholder="Contents (comma seperated)"
-                onChange={(e) => setEmailInput({ ...emailInput, email_contents: e.target.value.split(",") })}
             />
+             <button className="add-content-button" onClick={addEmailContent}>
+                Any Topics or Ideas
+             </button>
+             <div className="email-contents">
+               {emailInput.email_contents.map((content, index) => (
+                 <div key={index} className="email-content">{content}</div>
+               ))}
+             </div>
             </div>
             <button className="generate-button" onClick={generateEmail}>
             Generate Email
