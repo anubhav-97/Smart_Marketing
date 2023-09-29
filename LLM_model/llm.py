@@ -1,10 +1,12 @@
 # Import necessary modules and classes
 from langchain.chat_models import ChatOpenAI
 from enum import Enum
+import os
 
 # Import the OpenAI API key (assuming it's provided)
-import os
-os.environ["OPENAI_API_KEY"] = "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"
+# Load the API key from the .env file
+os.environ["OPENAI_API_KEY"] = "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"
+
 
 # Define an enumeration for different generation item types
 class GenerationItemType(Enum):

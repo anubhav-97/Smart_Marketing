@@ -5,9 +5,21 @@ from api.basemodels import GeneratePosts, GenerateEmail
 from post_generator.main import generate
 from email_generator.email_generator import EmailGenerator
 from mangum import Mangum
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create app object
 app = FastAPI()
+
+origins = ["http://localhost:3000"]  # Replace with your React app's URL
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+
 
 # Root endpoint
 @app.get('/')
@@ -27,9 +39,7 @@ def gen_posts(data:GeneratePosts):
     platforms = data['platforms']
     generated_post = generate.generate_post(brand,description,work,posts_language,
                                         topics_ideas_prompt_expansion,platforms)
-    return {
-        generated_post
-    }
+    return generated_post
 
 # Endpoint to generate emails
 @app.post('/emailgenerator')
@@ -40,9 +50,7 @@ def gen_email(data:GenerateEmail):
     style = data['style']
     email_contents = data['email_contents']
     generated_email = EmailGenerator.gen_mail_format(sender,recipient,style,email_contents)
-    return {
-        generated_email
-    }
+    return generated_email
 
 
 handler = Mangum(app=app)
