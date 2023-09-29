@@ -29,10 +29,6 @@ jobs:
       - name: Install Python Virtual ENV
         run: pip3 install virtualenv
 
-      # Step-2 Install Python Virtual ENV
-      - name: Install Python langchain
-        run: pip3 install langchain
-
       # Step-3 Setup Virtual ENV
       - name:  Virtual ENV
         uses: actions/cache@v2
