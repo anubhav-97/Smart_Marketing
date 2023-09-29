@@ -1,7 +1,7 @@
 # Import required libraries and models
 import uvicorn
 from fastapi import FastAPI
-from api.basemodels import GeneratePosts, GenerateEmail
+from basemodels import GeneratePosts, GenerateEmail
 from post_generator.main import generate
 from email_generator.email_generator import EmailGenerator
 from mangum import Mangum
@@ -10,14 +10,17 @@ from fastapi.middleware.cors import CORSMiddleware
 # Create app object
 app = FastAPI()
 
-origins = ["http://localhost:3000"]  # Replace with your React app's URL
+origins = [
+    "http://localhost:3000"
+    
+]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
+    allow_methods=['*'],
+    allow_headers=['*']
 )
 
 

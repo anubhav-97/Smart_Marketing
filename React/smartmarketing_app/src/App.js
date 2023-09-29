@@ -4,20 +4,29 @@ import api from './api';
 import Header from './Header';
 
 function App() {
+  // State variables to manage input and output for the Social Media and Email generators
   const [postInput, setPostInput] = useState({});
   const [emailInput, setEmailInput] = useState({ email_contents: [] });
 
   const [postOutput, setPostOutput] = useState();
   const [emailOutput, setEmailOutput] = useState();
 
+  // Function to generate a Social Media post based on the input
   const generatePost = async () => {
     const response = await api.post('/socialmedia', postInput);
     setPostOutput(response.data);
   };
 
+  // Function to generate an Email based on the input
   const generateEmail = async () => {
     const response = await api.post('/emailgenerator', emailInput);
     setEmailOutput(response.data);
+  };
+  const addEmailContent = () => {
+    const newContent = prompt('Enter email content:');
+    if (newContent) {
+      setEmailInput({ ...emailInput, email_contents: [newContent, ...emailInput.email_contents] });
+    }
   };
 
   return (
@@ -84,12 +93,14 @@ function App() {
                 placeholder="Style"
                 onChange={(e) => setEmailInput({ ...emailInput, style: e.target.value })}
             />
-            <input
-                className="input-field"
-                placeholder="Contents"
-                onChange={(e) => setEmailInput({ ...emailInput, email_contents: e.target.value })}
-            />
-            {/* Add similar inputs for other fields */}
+             <button className="add-content-button" onClick={addEmailContent}>
+                Add Email Content
+             </button>
+             <div className="email-contents">
+               {emailInput.email_contents.map((content, index) => (
+                 <div key={index} className="email-content">{content}</div>
+               ))}
+             </div>
             </div>
             <button className="generate-button" onClick={generateEmail}>
             Generate Email

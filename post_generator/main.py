@@ -12,8 +12,8 @@ import tweepy
 # Function to post a tweet
 def post_to_twitter(tweet_content):
     # Authenticate with Twitter API
-    auth = tweepy.OAuthHandler("RZCKAGkXvjhbcMkIhNkYclfeZ", "OkDytvKSIO1sQEyvRgsSr7OaFCgxtvH8Doai0TYCm32Hxaz22H")
-    auth.set_access_token("1392722843272577027-CewPQELnvBrQPek91RWxxDLGhD04kw", "BpZMb5FH8xlL4BjNkCuzAwZcvFAjJNch2zbIfmhT7Jvwo")
+    auth = tweepy.OAuthHandler("RZCKAGkXhbcMkIhNkYclfeZ", "OkDytvKSIsQEyvRgsSr7OaFCgxtvH8Doai0TYCm32Hxaz22H")
+    auth.set_access_token("13927228432577027-CewPQELnvBrQPek91RWxxDLGhD04kw", "BpZMFH8xlL4BjNkCuzAwZcvFAjJNch2zbIfmhT7Jvwo")
     api = tweepy.API(auth, wait_on_rate_limit=True)
     api.update_status(status=tweet_content)
 
