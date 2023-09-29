@@ -30,3 +30,22 @@ Use ChatGPT to analyze your email list and segment subscribers based on various 
 ChatGPT can analyze recipient data and recommend the best times to send emails based on individual preferences and past behavior to increase open and click-through rates.
 
 
+# Tools and Technologies Used
+
+Frontend: React, JavaScript, Node.js, HTML, CSS
+Backend: Python 3, Langchain, OpenAI API, FastAPI(To Build API)
+Cloud Technologies: AWS Lambda, AWS API Gateway, AWS S3
+CI-CD pipeline: Github Actions.
+
+# How to start using Smart Marketer?
+After you have Python installed, follow these steps:
+1. `git clone https://github.com/anubhav-97/Smart_Marketing.git` (clone the repo)
+2. `cd Smart_Marketing`
+3. `pip install -r requirements.txt` (install the dependencies)
+4. `uvicorn api.app:app --reload`
+5. `npm start` 
+
+And you will be on the app...
+
+
+
