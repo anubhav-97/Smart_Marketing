@@ -5,7 +5,7 @@ import os
 
 # Import the OpenAI API key (assuming it's provided)
 # Load the API key from the .env file
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 
 
 # Define an enumeration for different generation item types
