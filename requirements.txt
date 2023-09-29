@@ -1,10 +1,6 @@
 openai
 langchain
-enum
-fastapi
-requests
 python-inquirer
-fastapi
 tweepy
 uvicorn==0.14.0
 asgiref==3.4.1
