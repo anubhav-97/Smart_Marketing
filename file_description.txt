@@ -1,0 +1,26 @@
+## File Description
+
+1. .github\workflows\main.yml - this is the file fro continious integration and continious deplyment
+
+2. api- This is a folder with components related to API in it.
+	api/app.py - FastAPI file
+	api/basemodels.py - This contain base models of in it.
+
+3. email_generator - main folder which from email generator
+	email_generator/email_generator.py - this has methods which
+	personalised generate email.
+
+4. LLM_Model - it contains main file of to call the api of LLM
+	LLM_Model/llm - this contains methods which call Lngchain API 	and returns the results
+
+5. post_generator - folder whcoh contain all the generators of all the social media apps.
+	generators - this contain social media content generators for 4 popular social media applications (Twitter, facebook, linkedin, instagram) it also haev ideas and tocpic generator.
+	post_generator/main.py - it is the main file which takes input from front end and give a single output and posts over an app
+	post_generator/prompts.py: this file contains methods which stops the content to get agressive or vulger
+	post_generator/style.py: it decides the style of a post weather it will be formal or casual.
+
+6. React/src/app.js - master file for the frontend 
+
+7. tests/test.py - to test the API
+
+8. requirements.txt - contains all dependencies

@@ -6,7 +6,7 @@ import Header from './Header';
 function App() {
   // State variables to manage input and output for the Social Media and Email generators
   const [postInput, setPostInput] = useState({});
-  const [emailInput, setEmailInput] = useState({ email_contents: [] });
+  const [emailInput, setEmailInput] = useState({});
 
   const [postOutput, setPostOutput] = useState();
   const [emailOutput, setEmailOutput] = useState();
@@ -22,12 +22,6 @@ function App() {
     const response = await api.post('/emailgenerator', emailInput);
     setEmailOutput(response.data);
   };
-  const addEmailContent = () => {
-    const newContent = prompt('Enter email content:');
-    if (newContent) {
-      setEmailInput({ ...emailInput, email_contents: [newContent, ...emailInput.email_contents] });
-    }
-  };
 
   return (
     <div className="app">
@@ -40,32 +34,32 @@ function App() {
             <div className="input-container">
             <input
                 className="input-field"
-                placeholder="Brand"
+                placeholder="What's the Name of your Brand?"
                 onChange={(e) => setPostInput({ ...postInput, brand: e.target.value })}
             />
             <input
                 className="input-field"
-                placeholder="Description"
+                placeholder="What does your brand do?"
                 onChange={(e) => setPostInput({ ...postInput, description: e.target.value })}
             />
             <input
                 className="input-field"
-                placeholder="Work"
+                placeholder="Which Industry do you cater?"
                 onChange={(e) => setPostInput({ ...postInput, work: e.target.value })}
             />
             <input
                 className="input-field"
-                placeholder="Language"
+                placeholder="In which language to want to write the post?"
                 onChange={(e) => setPostInput({ ...postInput, posts_language: e.target.value })}
             />
             <input
                 className="input-field"
-                placeholder="Expansion"
+                placeholder="Any new developments, offers or discounts?"
                 onChange={(e) => setPostInput({ ...postInput, topics_ideas_prompt_expansion: e.target.value })}
             />
             <input
                 className="input-field"
-                placeholder="Platform"
+                placeholder="Which Platform do you want to post on?"
                 onChange={(e) => setPostInput({ ...postInput, platforms: e.target.value })}
             />
             </div>
@@ -90,17 +84,13 @@ function App() {
             />
             <input
                 className="input-field"
-                placeholder="Style"
+                placeholder="Style of the Email?"
                 onChange={(e) => setEmailInput({ ...emailInput, style: e.target.value })}
+            /><input
+                className="input-field"
+                placeholder="Contents (comma seperated)"
+                onChange={(e) => setEmailInput({ ...emailInput, email_contents: e.target.value.split(",") })}
             />
-             <button className="add-content-button" onClick={addEmailContent}>
-                Add Email Content
-             </button>
-             <div className="email-contents">
-               {emailInput.email_contents.map((content, index) => (
-                 <div key={index} className="email-content">{content}</div>
-               ))}
-             </div>
             </div>
             <button className="generate-button" onClick={generateEmail}>
             Generate Email

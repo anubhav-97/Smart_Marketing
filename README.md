@@ -34,15 +34,21 @@ It can adjust the tone/style accordingly weather the email style should be Forma
 **Frontend:** React, JavaScript, Node.js, HTML, CSS\
 **Backend:** Python 3, Langchain, OpenAI API, FastAPI(To Build API)\
 **Cloud Technologies:** AWS Lambda, AWS API Gateway, AWS S3\
-**CI-CD pipeline:** Github Actions. <br />
+**CI-CD pipeline:** Github Actions <br />
 
 # How to start using Smart Marketer?
-After you have Python installed, follow these steps:
-1. `git clone https://github.com/anubhav-97/Smart_Marketing.git` (clone the repo)
-2. `cd Smart_Marketing`
-3. `pip install -r requirements.txt` (install the dependencies)
-4. `uvicorn api.app:app --reload`
-5. `npm start` 
+## Setup:
+1. Firstly you should have python3 installed in you computer
+2. run `git clone https://github.com/anubhav-97/Smart_Marketing.git` (clone the repo)
+2. then run `pip install -r requirements.txt` (install all dependencies)
+3. Please Enter an OpenAI API key in the LLM_model/llm.py file at the place of YOUR_API_KEY
+
+## Backend Server:
+1. Run `uvicorn api.app:app --reload` (this will run the backend server)
+
+## Frontend Build:
+1. Navigate to folder smartmarketing_app `cd React/smartmarketing_app`
+2. Run `npm start` 
 
 And you will be on the app...
 
@@ -97,7 +103,7 @@ You can also check AWS Lambda for the updated function code.\
 After successful deployment, your FastAPI application will be updated and accessible via AWS Lambda.
 Repeat for Future Deployments:
 
-
+Please feel free to present thoughts on this project at anubhav25sh@gmail.com
 
 ### In the near Future...
 It can Generates AI Images for each post using Stable Diffusion, Dalle2 or Midjourney\
