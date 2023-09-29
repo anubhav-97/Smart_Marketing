@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from api.basemodels import GeneratePosts, GenerateEmail
 from post_generator.main import generate
 from email_generator.email_generator import EmailGenerator
+from mangum import Mangum
 
 # Create app object
 app = FastAPI()
@@ -42,6 +43,9 @@ def gen_email(data:GenerateEmail):
     return {
         generated_email
     }
+
+
+handler = Mangum(app=app)
 
 # Main function
 if __name__ == '__main__':
